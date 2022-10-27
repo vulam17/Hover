@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 1000px;
+            overflow: hidden;
+
+        }
+        .container
+        {
+            width: 40%;
+        }
+        img
+        {
+            width: 100%;
+            box-shadow: 0 0 15px gray;
+            border-radius: 10px;
+        }
+        #img2, #img3, #img4, #img5
+        {
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" onmouseleave="change()">
+        <img id = "img1" src="asset/a.jpg">
+        <img id = "img2" src="asset/b.jpg">
+        <img id = "img3" src="asset/c.jpg">
+        <img id = "img4" src="asset/d.jpg">
+        <img id = "img5" src="asset/e.jpg">
+    </div>
+</body>
+<script>
+    let count = 1;
+    function change()
+    {
+        count++
+        if(count===6) count = 1
+        for(i = 1; i <= 5; i++)
+        {
+            document.getElementById(`img${i}`).style.display = "none"
+            if( i === count) document.getElementById(`img${i}`).style.display = "block"
+        }
+    }
+</script>
+</html>
